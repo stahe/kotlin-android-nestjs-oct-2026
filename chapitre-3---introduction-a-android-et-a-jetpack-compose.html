@@ -1,0 +1,928 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Un exemple de client / serveur [Kotlin Android] / [NestJS]">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/kotlin-android-nestjs-oct-2026/chapitre-3---introduction-a-android-et-a-jetpack-compose.html">
+      
+      
+        <link rel="prev" href="chapitre-2---installation-du-serveur-nestjs.html">
+      
+      
+        <link rel="next" href="chapitre-4---le-client-kotlin-de-lapplication-rdvmedecins.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>4. Chapitre 3 - Introduction à Android et à Jetpack Compose - Un exemple de client / serveur [Kotlin Android] / [NestJS]</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "Un exemple de client / serveur [Kotlin Android] / [NestJS]";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#4-chapitre-3-introduction-a-android-et-a-jetpack-compose" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Un exemple de client / serveur [Kotlin Android] / [NestJS]" class="md-header__button md-logo" aria-label="Un exemple de client / serveur [Kotlin Android] / [NestJS]" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Un exemple de client / serveur [Kotlin Android] / [NestJS]
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              4. Chapitre 3 - Introduction à Android et à Jetpack Compose
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Passer en mode sombre"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Passer en mode sombre" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Passer en mode clair"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Passer en mode clair" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/kotlin-android-nestjs-oct-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Un exemple de client / serveur [Kotlin Android] / [NestJS]" class="md-nav__button md-logo" aria-label="Un exemple de client / serveur [Kotlin Android] / [NestJS]" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Un exemple de client / serveur [Kotlin Android] / [NestJS]
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/kotlin-android-nestjs-oct-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accueil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduction.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="chapitre-1---mise-en-place-de-lenvironnement-de-travail.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Chapitre 1 - Mise en place de l’environnement de travail
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="chapitre-2---installation-du-serveur-nestjs.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Chapitre 2 - Installation du serveur [NestJS]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Chapitre 3 - Introduction à Android et à Jetpack Compose
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="chapitre-3---introduction-a-android-et-a-jetpack-compose.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Chapitre 3 - Introduction à Android et à Jetpack Compose
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#41-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1. Sources
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42-ce-quest-une-application-android" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2. Ce qu’est une application Android
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#43-le-modele-de-developpement-de-compose-tout-est-une-fonction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3. Le modèle de développement de Compose : tout est une fonction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#44-letat-et-la-recomposition-ni-statefulwidget-ni-setstate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4. L’état et la recomposition : ni StatefulWidget, ni setState
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#45-partager-un-etat-compositionlocal-lequivalent-de-provider" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5. Partager un état : CompositionLocal, l’équivalent de provider
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#46-pas-de-langage-de-template-conditions-et-listes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6. Pas de langage de template : conditions et listes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#47-les-coroutines-async-await-a-la-maniere-de-kotlin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.7. Les coroutines : async / await à la manière de Kotlin
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#48-le-cycle-de-vie-rotation-de-lecran-et-viewmodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.8. Le cycle de vie : rotation de l’écran et ViewModel
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#49-un-premier-exemple-minimal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.9. Un premier exemple minimal
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#410-recapitulatif-correspondances-flutter-jetpack-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.10. Récapitulatif : correspondances Flutter -&gt; Jetpack Compose
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="chapitre-4---le-client-kotlin-de-lapplication-rdvmedecins.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Chapitre 4 - Le client Kotlin de l’application RdvMedecins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="chapitre-5---executer-lapplication--emulateur-telephone-apk.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Chapitre 5 - Exécuter l’application : émulateur, téléphone, APK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="chapitre-6---conclusion-et-etapes-suivantes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Chapitre 6 - Conclusion et étapes suivantes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="4-chapitre-3-introduction-a-android-et-a-jetpack-compose">4. <span style="color: #2e74b5">Chapitre 3 - Introduction à Android et à Jetpack Compose</span></h1>
+<h2 id="41-sources">4.1. <span style="color: #2e74b5">Sources</span></h2>
+<p>Documentation officielle : https://developer.android.com - en particulier les pages « Jetpack Compose » (https://developer.android.com/compose), « Thinking in Compose », « State and Jetpack Compose », « Introduction to activities » et « ViewModel overview ». Coroutines Kotlin : https://kotlinlang.org/docs/coroutines-overview.html</p>
+<h2 id="42-ce-quest-une-application-android">4.2. <span style="color: #2e74b5">Ce qu’est une application Android</span></h2>
+<p>Une application Android est un fichier .apk (ou .aab pour le Play Store) qui regroupe le code compilé, les ressources (icônes, textes, images) et un manifeste (<em><mark style="background-color: #fff5ce">[AndroidManifest.xml]</mark></em>), sa « carte d’identité » pour le système : son identifiant, les permissions qu’elle demande (accès au réseau...), et la liste de ses écrans.</p>
+<p>Ces écrans s’appellent des « activités » (<em><mark style="background-color: #fff5ce">[Activity]</mark></em>). Une activité n’est pas créée par le programme lui-même : c’est le SYSTÈME qui la crée, quand l’utilisateur touche l’icône de l’application, puis qui appelle ses méthodes au fil de sa vie : <strong><em><mark style="background-color: #fff5ce">[onCreate(...)]</mark></em></strong> à sa création, <strong><em><mark style="background-color: #fff5ce">[onPause()]</mark></em></strong> quand elle passe au second plan, <strong><em><mark style="background-color: #fff5ce">[onDestroy()]</mark></em></strong> à sa destruction... Il n’y a donc pas de fonction <strong><em><mark style="background-color: #fff5ce">[main()]</mark></em></strong> dans une application Android - c’est la première différence avec le <strong><em><mark style="background-color: #fff5ce">[void main()]</mark></em></strong> du client Flutter. Ce cycle de vie a une conséquence importante, détaillée plus loin : une rotation de l’écran DÉTRUIT puis RECRÉE l’activité.</p>
+<p>Le code Kotlin est compilé en bytecode Java, puis converti au format DEX et exécuté par la machine virtuelle d’Android, <em><mark style="background-color: #fff5ce">[ART]</mark></em> (Android Runtime), qui le compile à son tour en code machine à l’installation et pendant l’exécution. Il n’y a ni moteur JavaScript ni <em><mark style="background-color: #fff5ce">[WebView]</mark></em> : c’est une application NATIVE, au même titre que les applications fournies avec le téléphone. Comme Flutter, Jetpack Compose dessine lui-même ses composants (boutons, champs de saisie...) plutôt que d’utiliser les anciens composants graphiques d’Android (les <em><mark style="background-color: #fff5ce">[View]</mark></em>) - mais il le fait avec les bibliothèques graphiques d’Android elles-mêmes, et non avec un moteur de rendu embarqué dans l’application comme Flutter.</p>
+<p>Contrairement à Flutter, ce client ne vise QUE Android : le même code ne produit pas d’application iOS, de bureau ou web. Le chapitre 5 indique ce qu’il faudrait faire pour cela (Kotlin Multiplatform et Compose Multiplatform).</p>
+<h2 id="43-le-modele-de-developpement-de-compose-tout-est-une-fonction">4.3. <span style="color: #2e74b5">Le modèle de développement de Compose : tout est une fonction</span></h2>
+<p>Avec Jetpack Compose, une interface est décrite par des FONCTIONS Kotlin annotées <strong><em><mark style="background-color: #fff5ce">[@Composable]</mark></em></strong>. Une fonction @Composable ne renvoie rien : elle ÉMET de l’interface en appelant d’autres fonctions @Composable - <strong><em><mark style="background-color: #fff5ce">[Text(...)]</mark></em></strong>, <strong><em><mark style="background-color: #fff5ce">[Button(...)]</mark></em></strong>, <strong><em><mark style="background-color: #fff5ce">[Column(...)]</mark></em></strong>... L’interface complète est l’arbre de ces appels imbriqués.</p>
+<p>C’est le même modèle déclaratif que Flutter (« l’interface est une fonction de l’état »), avec une différence de forme : là où Flutter décrit chaque élément par une CLASSE (un <em><mark style="background-color: #fff5ce">[Widget]</mark></em>) dont la méthode <strong><em><mark style="background-color: #fff5ce">[build(...)]</mark></em></strong> renvoie un arbre d’objets, Compose n’utilise que des fonctions. Le plugin de compilation Compose transforme ces fonctions pour qu’elles puissent être ré-exécutées sélectivement quand l’état qu’elles lisent change : c’est la « recomposition ».</p>
+<p>Les réglages d’apparence et de disposition (marges, taille, alignement, couleur de fond, clics...) ne sont pas des éléments de l’arbre, comme les widgets <strong><em><mark style="background-color: #fff5ce">[Padding]</mark></em></strong> ou <strong><em><mark style="background-color: #fff5ce">[Center]</mark></em></strong> de Flutter, mais des « modificateurs », chaînés et passés en paramètre : <strong><em><mark style="background-color: #fff5ce">[Modifier.padding(16.dp).fillMaxWidth()]</mark></em></strong>. L’unité <strong><em><mark style="background-color: #fff5ce">[dp]</mark></em></strong> (density-independent pixel) est l’équivalent des pixels logiques de Flutter : 1 dp correspond à un pixel sur un écran de 160 points par pouce, quelle que soit la densité réelle de l’écran.</p>
+<h2 id="44-letat-et-la-recomposition-ni-statefulwidget-ni-setstate">4.4. <span style="color: #2e74b5">L’état et la recomposition : ni StatefulWidget, ni setState</span></h2>
+<p>Flutter distingue, dès la déclaration de la classe, un <em><mark style="background-color: #fff5ce">[StatelessWidget]</mark></em> d’un <em><mark style="background-color: #fff5ce">[StatefulWidget]</mark></em> associé à sa classe <em><mark style="background-color: #fff5ce">[State]</mark></em>, et impose d’appeler <strong><em><mark style="background-color: #fff5ce">[setState(() { ... })]</mark></em></strong> pour qu’une modification de l’état soit affichée. Compose n’a rien de tout cela :</p>
+<ul>
+  <li>un état local se déclare dans la fonction elle-même : <i><b><mark style="background-color: #fff5ce">[var clics by remember { mutableStateOf(0) }]</mark></b></i> ;
+  </li>
+  <li><i><b><mark style="background-color: #fff5ce">[mutableStateOf(...)]</mark></b></i> crée un ÉTAT OBSERVABLE : Compose enregistre automatiquement chaque fonction @Composable qui le LIT, et ré-exécute (« recompose ») ces fonctions, et elles seules, quand la valeur change. Il n’y a rien à appeler après une modification : <i><b><mark style="background-color: #fff5ce">[clics++]</mark></b></i> suffit. C’est le fonctionnement de <i><b><mark style="background-color: #fff5ce">[ref(...)]</mark></b></i>/<i><b><mark style="background-color: #fff5ce">[reactive(...)]</mark></b></i> côté Vue.js, et non celui de <i><b><mark style="background-color: #fff5ce">[setState(...)]</mark></b></i> ;
+  </li>
+  <li><i><b><mark style="background-color: #fff5ce">[remember { ... }]</mark></b></i> mémorise une valeur d’une exécution de la fonction à la suivante. Sans lui, l’état serait recréé - et remis à zéro - à chaque recomposition ;
+  </li>
+  <li><i><b><mark style="background-color: #fff5ce">[rememberSaveable { ... }]</mark></b></i> fait la même chose, et conserve EN PLUS la valeur quand l’activité est détruite puis recréée (rotation de l’écran, cf. plus loin) ;
+  </li>
+  <li>le mot-clé <i><b><mark style="background-color: #fff5ce">[by]</mark></b></i> (délégation de propriété, cf. le <a href="https://stahe.github.io/kotlin-oct-2026/">cours Kotlin</a>) permet d’écrire <i><b><mark style="background-color: #fff5ce">[clics]</mark></b></i> au lieu de <i><b><mark style="background-color: #fff5ce">[clics.value]</mark></b></i>.
+  </li>
+</ul>
+
+<p>Le même mécanisme vaut pour un état partagé : une classe ordinaire dont les propriétés sont déclarées <strong><em><mark style="background-color: #fff5ce">[by mutableStateOf(...)]</mark></em></strong> est observée automatiquement par toutes les fonctions qui lisent ces propriétés. C’est ainsi que sont écrits les services du client (<em><mark style="background-color: #fff5ce">[SettingsService]</mark></em>, <em><mark style="background-color: #fff5ce">[AuthService]</mark></em>, <em><mark style="background-color: #fff5ce">[TranslationsService]</mark></em>, cf. chapitre 4) : là où la version Flutter étendait <em><mark style="background-color: #fff5ce">[ChangeNotifier]</mark></em> et appelait <strong><em><mark style="background-color: #fff5ce">[notifyListeners()]</mark></em></strong> à la main après chaque modification, il n’y a ici rien à notifier.</p>
+<h2 id="45-partager-un-etat-compositionlocal-lequivalent-de-provider">4.5. <span style="color: #2e74b5">Partager un état : CompositionLocal, l’équivalent de provider</span></h2>
+<p>Pour rendre un service disponible à tout un arbre de fonctions @Composable sans le passer en paramètre d’appel en appel, Compose propose les <em><mark style="background-color: #fff5ce">[CompositionLocal]</mark></em> : on déclare une « clé » (<strong><em><mark style="background-color: #fff5ce">[val LocalAuth = staticCompositionLocalOf&lt;AuthService&gt; { ... }]</mark></em></strong>), on FOURNIT une valeur au sommet de l’arbre (<strong><em><mark style="background-color: #fff5ce">[CompositionLocalProvider(LocalAuth provides auth) { ... }]</mark></em></strong>), et n’importe quelle fonction descendante la LIT avec <strong><em><mark style="background-color: #fff5ce">[LocalAuth.current]</mark></em></strong>. C’est très exactement le rôle du package <em><mark style="background-color: #fff5ce">[provider]</mark></em> de la version Flutter (<strong><em><mark style="background-color: #fff5ce">[MultiProvider]</mark></em></strong> / <strong><em><mark style="background-color: #fff5ce">[context.read&lt;...&gt;()]</mark></em></strong>), de <strong><em><mark style="background-color: #fff5ce">[provide]</mark></em></strong>/<strong><em><mark style="background-color: #fff5ce">[inject]</mark></em></strong> côté Vue.js ou d’un <strong><em><mark style="background-color: #fff5ce">[Context]</mark></em></strong> React. Compose n’a pas besoin de l’équivalent de <strong><em><mark style="background-color: #fff5ce">[context.watch&lt;...&gt;()]</mark></em></strong> : l’abonnement aux changements est assuré par les états observables eux-mêmes.</p>
+<h2 id="46-pas-de-langage-de-template-conditions-et-listes">4.6. <span style="color: #2e74b5">Pas de langage de template : conditions et listes</span></h2>
+<p>Comme en Flutter, l’affichage conditionnel et les listes s’écrivent avec les instructions ordinaires du langage : un <strong><em><mark style="background-color: #fff5ce">[if]</mark></em></strong> Kotlin pour une condition, une boucle <strong><em><mark style="background-color: #fff5ce">[forEach]</mark></em></strong> pour une liste. Une fonction @Composable étant une fonction comme une autre, <strong><em><mark style="background-color: #fff5ce">[if (auth.estConnecte) { ... }]</mark></em></strong> ÉMET ou non les éléments du bloc - il n’y a pas d’équivalent à construire des listes de widgets (<strong><em><mark style="background-color: #fff5ce">[children: [...]]</mark></em></strong>) ni à la syntaxe « collection if » de Dart.</p>
+<h2 id="47-les-coroutines-async-await-a-la-maniere-de-kotlin">4.7. <span style="color: #2e74b5">Les coroutines : async / await à la manière de Kotlin</span></h2>
+<p>Une application Android n’a qu’un seul thread chargé de dessiner l’interface et de répondre à l’utilisateur : le thread principal. Il ne doit JAMAIS attendre : Android interdit d’ailleurs tout accès réseau depuis ce thread (exception <strong><em><mark style="background-color: #fff5ce">[NetworkOnMainThreadException]</mark></em></strong>). Les appels au serveur doivent donc être faits « en arrière-plan ». Kotlin offre pour cela les COROUTINES :</p>
+<ul>
+  <li>une fonction <i><b><mark style="background-color: #fff5ce">[suspend]</mark></b></i> peut se mettre en pause sans bloquer le thread qui l’exécute - l’équivalent d’une fonction <i><b><mark style="background-color: #fff5ce">[async]</mark></b></i> Dart ou TypeScript. Appeler une fonction <i><b><mark style="background-color: #fff5ce">[suspend]</mark></b></i> revient à l’attendre : il n’y a pas de mot-clé <i><b><mark style="background-color: #fff5ce">[await]</mark></b></i>, l’attente est implicite ;
+  </li>
+  <li><i><b><mark style="background-color: #fff5ce">[withContext(Dispatchers.IO) { ... }]</mark></b></i> exécute un bloc sur un thread réservé aux entrées/sorties, puis revient sur le thread de départ avec le résultat. C’est ce qui permet d’utiliser une bibliothèque réseau « bloquante » (<i><mark style="background-color: #fff5ce">[OkHttp]</mark></i>) sans jamais bloquer l’interface ;
+  </li>
+  <li>une coroutine se lance avec <i><b><mark style="background-color: #fff5ce">[launch { ... }]</mark></b></i> DANS une portée (<i><mark style="background-color: #fff5ce">[CoroutineScope]</mark></i>) liée à un cycle de vie : <i><b><mark style="background-color: #fff5ce">[viewModelScope]</mark></b></i> (les coroutines d’un ViewModel, annulées à sa destruction) ou <i><b><mark style="background-color: #fff5ce">[rememberCoroutineScope()]</mark></b></i> (celles d’une fonction @Composable, annulées quand elle disparaît de l’écran). Plus de risque, comme en Flutter, de modifier l’état d’un écran déjà détruit (le test <i><b><mark style="background-color: #fff5ce">[if (mounted)]</mark></b></i>) : la coroutine est annulée avec lui.
+  </li>
+</ul>
+
+<h2 id="48-le-cycle-de-vie-rotation-de-lecran-et-viewmodel">4.8. <span style="color: #2e74b5">Le cycle de vie : rotation de l’écran et ViewModel</span></h2>
+<p>Par défaut, quand l’utilisateur tourne son téléphone (ou change la langue du système, ou passe en mode sombre), Android DÉTRUIT l’activité et en crée une nouvelle, adaptée à la nouvelle configuration. Tout ce qui était mémorisé dans l’ancienne activité, et dans les états <strong><em><mark style="background-color: #fff5ce">[remember { ... }]</mark></em></strong> de ses fonctions @Composable, est perdu. Flutter n’a pas ce problème : la rotation n’y change que la taille de l’écran.</p>
+<p>Android propose deux réponses, toutes deux utilisées par le client :</p>
+<ul>
+  <li><i><b><mark style="background-color: #fff5ce">[rememberSaveable { ... }]</mark></b></i> pour les petits états d’interface (texte en cours de saisie, médecin choisi...) : Android les sauvegarde avant la destruction et les restitue à la nouvelle activité ;
+  </li>
+  <li>un <i><mark style="background-color: #fff5ce">[ViewModel]</mark></i> pour l’état et la logique d’un écran (listes chargées depuis le serveur, agenda affiché...) : c’est un objet qu’Android CONSERVE pendant les recréations de l’activité et redonne à la nouvelle. Il n’est détruit que lorsque l’écran est quitté pour de bon. Le client de ce document place dans un ViewModel (<i><mark style="background-color: #fff5ce">[AppViewModel]</mark></i>) tout l’état que la version Flutter gardait dans la classe <i><b><mark style="background-color: #fff5ce">[_AppRootState]</mark></b></i>.
+  </li>
+</ul>
+
+<p>Les objets qui doivent vivre aussi longtemps que l’application (les services) ne sont, eux, construits ni dans l’activité ni dans un ViewModel, mais dans la classe <em><mark style="background-color: #fff5ce">[Application]</mark></em> de l’application, créée une seule fois au lancement du processus.</p>
+<h2 id="49-un-premier-exemple-minimal">4.9. <span style="color: #2e74b5">Un premier exemple minimal</span></h2>
+<p>Voici une petite application Compose : un texte, un bouton qui compte les clics, et un message qui n’apparaît qu’à partir du troisième clic. Pour l’essayer, il suffit de remplacer le contenu du fichier <strong><em><mark style="background-color: #fff5ce">[MainActivity.kt]</mark></em></strong> d’un projet créé avec le modèle [Empty Activity] (cf. chapitre 1), en adaptant la ligne <strong><em><mark style="background-color: #fff5ce">[package]</mark></em></strong>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#__codelineno-0-21">21</a></span>
+<span class="normal"><a href="#__codelineno-0-22">22</a></span>
+<span class="normal"><a href="#__codelineno-0-23">23</a></span>
+<span class="normal"><a href="#__codelineno-0-24">24</a></span>
+<span class="normal"><a href="#__codelineno-0-25">25</a></span>
+<span class="normal"><a href="#__codelineno-0-26">26</a></span>
+<span class="normal"><a href="#__codelineno-0-27">27</a></span>
+<span class="normal"><a href="#__codelineno-0-28">28</a></span>
+<span class="normal"><a href="#__codelineno-0-29">29</a></span>
+<span class="normal"><a href="#__codelineno-0-30">30</a></span>
+<span class="normal"><a href="#__codelineno-0-31">31</a></span>
+<span class="normal"><a href="#__codelineno-0-32">32</a></span>
+<span class="normal"><a href="#__codelineno-0-33">33</a></span>
+<span class="normal"><a href="#__codelineno-0-34">34</a></span>
+<span class="normal"><a href="#__codelineno-0-35">35</a></span>
+<span class="normal"><a href="#__codelineno-0-36">36</a></span>
+<span class="normal"><a href="#__codelineno-0-37">37</a></span>
+<span class="normal"><a href="#__codelineno-0-38">38</a></span>
+<span class="normal"><a href="#__codelineno-0-39">39</a></span>
+<span class="normal"><a href="#__codelineno-0-40">40</a></span>
+<span class="normal"><a href="#__codelineno-0-41">41</a></span>
+<span class="normal"><a href="#__codelineno-0-42">42</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">package</span><span class="w"> </span><span class="nn">fr.rdvmedecins.exemple</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="k">import</span><span class="w"> </span><span class="nn">android.os.Bundle</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="k">import</span><span class="w"> </span><span class="nn">androidx.activity.ComponentActivity</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="k">import</span><span class="w"> </span><span class="nn">androidx.activity.compose.setContent</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.layout.Column</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.foundation.layout.padding</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.material3.Button</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.material3.MaterialTheme</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.material3.Text</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.Composable</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.getValue</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.mutableIntStateOf</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.remember</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.runtime.setValue</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.ui.Modifier</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="k">import</span><span class="w"> </span><span class="nn">androidx.compose.ui.unit.dp</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a>
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="kd">class</span><span class="w"> </span><span class="nc">MainActivity</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ComponentActivity</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span><span class="w"> </span><span class="n">Bundle?</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="w">        </span><span class="k">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="w">        </span><span class="n">setContent</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="w">            </span><span class="n">MaterialTheme</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="w">                </span><span class="n">Compteur</span><span class="p">(</span><span class="n">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"RdvMedecins"</span><span class="p">)</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="p">}</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29"></a>
+<a id="__codelineno-0-30" name="__codelineno-0-30"></a><span class="nd">@Composable</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">Compteur</span><span class="p">(</span><span class="n">nom</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">clics</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">remember</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">mutableIntStateOf</span><span class="p">(</span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33"></a><span class="w">    </span><span class="n">Column</span><span class="p">(</span><span class="n">modifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">padding</span><span class="p">(</span><span class="m">32.</span><span class="n">dp</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34"></a><span class="w">        </span><span class="n">Text</span><span class="p">(</span><span class="s">"Bonjour, </span><span class="si">$</span><span class="n">nom</span><span class="s"> !"</span><span class="p">)</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="w">        </span><span class="n">Button</span><span class="p">(</span><span class="n">onClick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">clics</span><span class="o">++</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36"></a><span class="w">            </span><span class="n">Text</span><span class="p">(</span><span class="s">"Cliqué </span><span class="si">$</span><span class="n">clics</span><span class="s"> fois"</span><span class="p">)</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">clics</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">3</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39"></a><span class="w">            </span><span class="n">Text</span><span class="p">(</span><span class="s">"Bravo !"</span><span class="p">)</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-0-41" name="__codelineno-0-41"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-42" name="__codelineno-0-42"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Commentons ce code :</p>
+<ul>
+  <li>ligne 19 : <i><b><mark style="background-color: #fff5ce">[class MainActivity : ComponentActivity()]</mark></b></i> - l’activité, l’écran lancé par le système. <i><mark style="background-color: #fff5ce">[ComponentActivity]</mark></i> est la classe de base prévue pour Compose ;
+  </li>
+  <li>ligne 20 : <i><b><mark style="background-color: #fff5ce">[onCreate(...)]</mark></b></i> - appelée par Android à la création de l’activité. C’est le point de départ du code de l’application, à la place du <i><b><mark style="background-color: #fff5ce">[main()]</mark></b></i> de Flutter ;
+  </li>
+  <li>ligne 22 : <i><b><mark style="background-color: #fff5ce">[setContent { ... }]</mark></b></i> - remplace le contenu de l’écran par l’interface décrite dans le bloc : l’équivalent de <i><b><mark style="background-color: #fff5ce">[runApp(...)]</mark></b></i> en Flutter ;
+  </li>
+  <li>ligne 23 : <i><b><mark style="background-color: #fff5ce">[MaterialTheme { ... }]</mark></b></i> - fournit le thème Material 3 (couleurs, typographie, formes) à tout ce qui est appelé dans le bloc - le rôle du <i><b><mark style="background-color: #fff5ce">[MaterialApp]</mark></b></i> de Flutter, la navigation en moins ;
+  </li>
+  <li>lignes 30-31 : <i><b><mark style="background-color: #fff5ce">[@Composable fun Compteur(nom: String)]</mark></b></i> - une fonction @Composable, avec un paramètre. Par convention, son nom commence par une majuscule, comme un nom de classe : elle représente un élément d’interface ;
+  </li>
+  <li>ligne 32 : <i><b><mark style="background-color: #fff5ce">[var clics by remember { mutableIntStateOf(0) }]</mark></b></i> - un état local : <i><b><mark style="background-color: #fff5ce">[mutableIntStateOf]</mark></b></i> est la variante de <i><b><mark style="background-color: #fff5ce">[mutableStateOf]</mark></b></i> optimisée pour un entier ;
+  </li>
+  <li>ligne 33 : <i><b><mark style="background-color: #fff5ce">[Column(modifier = Modifier.padding(32.dp)) { ... }]</mark></b></i> - dispose ses enfants les uns sous les autres, avec une marge de 32 dp. <i><b><mark style="background-color: #fff5ce">[Row]</mark></b></i> les disposerait côte à côte ;
+  </li>
+  <li>ligne 35 : <i><b><mark style="background-color: #fff5ce">[Button(onClick = { clics++ })]</mark></b></i> - le gestionnaire de clic est un simple lambda. <i><b><mark style="background-color: #fff5ce">[clics++]</mark></b></i> modifie l’état : Compose recompose aussitôt <i><b><mark style="background-color: #fff5ce">[Compteur]</mark></b></i>, qui LIT cet état, et le texte du bouton est mis à jour ;
+  </li>
+  <li>lignes 38-40 : un <i><b><mark style="background-color: #fff5ce">[if]</mark></b></i> Kotlin ordinaire - le texte « Bravo ! » n’est émis, donc affiché, qu’à partir du troisième clic.
+  </li>
+</ul>
+
+<h2 id="410-recapitulatif-correspondances-flutter-jetpack-compose">4.10. <span style="color: #2e74b5">Récapitulatif : correspondances Flutter -&gt; Jetpack Compose</span></h2>
+<ul>
+  <li><i><b><mark style="background-color: #fff5ce">[void main()]</mark></b></i> + <i><b><mark style="background-color: #fff5ce">[runApp(...)]</mark></b></i> → activité (<i><mark style="background-color: #fff5ce">[ComponentActivity]</mark></i>) + <i><b><mark style="background-color: #fff5ce">[setContent { ... }]</mark></b></i>
+  </li>
+  <li><i><mark style="background-color: #fff5ce">[StatelessWidget]</mark></i>/<i><mark style="background-color: #fff5ce">[StatefulWidget]</mark></i> (classes) → fonctions <i><b><mark style="background-color: #fff5ce">[@Composable]</mark></b></i>
+  </li>
+  <li>champs de <i><b><mark style="background-color: #fff5ce">[State&lt;T&gt;]</mark></b></i> + <i><b><mark style="background-color: #fff5ce">[setState(...)]</mark></b></i> → <i><b><mark style="background-color: #fff5ce">[remember { mutableStateOf(...) }]</mark></b></i> (recomposition automatique)
+  </li>
+  <li><i><mark style="background-color: #fff5ce">[ChangeNotifier]</mark></i> + <i><b><mark style="background-color: #fff5ce">[notifyListeners()]</mark></b></i> → classe aux propriétés <i><b><mark style="background-color: #fff5ce">[by mutableStateOf(...)]</mark></b></i> (rien à notifier)
+  </li>
+  <li>package <i><mark style="background-color: #fff5ce">[provider]</mark></i> (<i><b><mark style="background-color: #fff5ce">[MultiProvider]</mark></b></i>, <i><b><mark style="background-color: #fff5ce">[context.read]</mark></b></i>/<i><b><mark style="background-color: #fff5ce">[watch]</mark></b></i>) → <i><mark style="background-color: #fff5ce">[CompositionLocal]</mark></i> (<i><b><mark style="background-color: #fff5ce">[CompositionLocalProvider]</mark></b></i>, <i><b><mark style="background-color: #fff5ce">[LocalXxx.current]</mark></b></i>)
+  </li>
+  <li>paramètres du constructeur d’un widget (entrées), fonctions passées en paramètre (sorties) → paramètres de la fonction @Composable, lambdas
+  </li>
+  <li><i><b><mark style="background-color: #fff5ce">[build(BuildContext)]</mark></b></i> → le corps de la fonction @Composable
+  </li>
+  <li>widgets <i><b><mark style="background-color: #fff5ce">[Padding]</mark></b></i>, <i><b><mark style="background-color: #fff5ce">[Center]</mark></b></i>, <i><b><mark style="background-color: #fff5ce">[SizedBox]</mark></b></i>... → modificateurs (<i><b><mark style="background-color: #fff5ce">[Modifier.padding(...)]</mark></b></i>...)
+  </li>
+  <li><i><b><mark style="background-color: #fff5ce">[Future&lt;T&gt;]</mark></b></i> + <i><b><mark style="background-color: #fff5ce">[async]</mark></b></i>/<i><b><mark style="background-color: #fff5ce">[await]</mark></b></i> → fonctions <i><b><mark style="background-color: #fff5ce">[suspend]</mark></b></i> + coroutines
+  </li>
+  <li>package <i><mark style="background-color: #fff5ce">[http]</mark></i> → bibliothèque <i><mark style="background-color: #fff5ce">[OkHttp]</mark></i>
+  </li>
+  <li>constructeurs <i><b><mark style="background-color: #fff5ce">[fromJson(...)]</mark></b></i> écrits à la main → classes <i><b><mark style="background-color: #fff5ce">[@Serializable]</mark></b></i> (<i><mark style="background-color: #fff5ce">[kotlinx.serialization]</mark></i>)
+  </li>
+  <li>package <i><mark style="background-color: #fff5ce">[shared_preferences]</mark></i> → <i><b><mark style="background-color: #fff5ce">[SharedPreferences]</mark></b></i> d’Android (l’API dont le package Flutter a repris le nom)
+  </li>
+  <li><i><b><mark style="background-color: #fff5ce">[showDialog(...)]</mark></b></i> → une fonction <i><b><mark style="background-color: #fff5ce">[AlertDialog(...)]</mark></b></i> affichée tant qu’un état le demande
+  </li>
+  <li><i><b><mark style="background-color: #fff5ce">[LayoutBuilder]</mark></b></i> / <i><b><mark style="background-color: #fff5ce">[MediaQuery]</mark></b></i> → <i><b><mark style="background-color: #fff5ce">[BoxWithConstraints]</mark></b></i> / <i><b><mark style="background-color: #fff5ce">[LocalConfiguration]</mark></b></i>
+  </li>
+  <li><i><b><mark style="background-color: #fff5ce">[pubspec.yaml]</mark></b></i> + <i><b><mark style="background-color: #fff5ce">[flutter pub get]</mark></b></i> → <i><b><mark style="background-color: #fff5ce">[build.gradle.kts]</mark></b></i> + <i><b><mark style="background-color: #fff5ce">[libs.versions.toml]</mark></b></i> + Gradle
+  </li>
+  <li>aucun équivalent Flutter : <i><mark style="background-color: #fff5ce">[ViewModel]</mark></i> et <i><b><mark style="background-color: #fff5ce">[rememberSaveable]</mark></b></i>, imposés par la recréation de l’activité à la rotation de l’écran
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        Ce cours, rédigé par l’IA d’Anthropic <strong>Claude</strong> à la demande de <strong>Serge Tahé</strong>, est mis à la disposition du public selon les termes de la
+        <em>licence Creative Commons Attribution – Pas d’utilisation commerciale –
+        ShareAlike 3.0 Unported</em>.
+
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>
