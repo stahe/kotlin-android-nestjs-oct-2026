@@ -634,8 +634,8 @@
 <p>Les codes du document sont |<a href="https://1drv.ms/u/c/f53a919f43d27eb5/IQC5dBa3JxouSbPxWODVhbTgAZfAf0hfPjCbxfr7wCCTwwE?e=3GFOvT">ICI</a>|.</p>
 <p>Ce document est un produit de l’IA Claude d’Anthropic. Il a pour vocation de transposer le document : <a href="https://stahe.github.io/spring-angular1.x-juillet-2014/">Un exemple de client / serveur - AngularJS 1.x / Spring 4</a> de deux manières :</p>
 <ul>
-<li>le client AngularJS 1.x est remplacé par une application Android native écrite en <em><mark style="background-color: #fff5ce">[Kotlin]</mark></em> avec <em><mark style="background-color: #fff5ce">[Jetpack Compose]</mark></em> ;</li>
-<li>le framework web Java Spring MVC est remplacé par le framework web <em><mark style="background-color: #fff5ce">[NestJS]</mark></em> ;</li>
+<li>le client AngularJS 1.x est remplacé par une application Android native écrite en <em>[Kotlin]</em> avec <em>[Jetpack Compose]</em> ;</li>
+<li>le framework web Java Spring MVC est remplacé par le framework web <em>[NestJS]</em> ;</li>
 </ul>
 <p>Il suit pour cela, chapitre par chapitre, le document <a href="https://stahe.github.io/flutter-nestjs-sept-2026/">Un exemple de client / serveur - Flutter / NestJS (2026)</a> : même serveur, même base de données, même architecture du client - seul le framework du client change, Flutter (Dart) étant remplacé par Jetpack Compose (Kotlin).</p>
 <p>L’IA Claude d’Anthropic a fait l’essentiel du travail :</p>
@@ -644,16 +644,16 @@
 <li>génération du cours au format ODT : Claude a généré le document, que le réviseur a relu et testé en le suivant.</li>
 </ul>
 <p>Note 1 : Si le lecteur a pour premier but « apprendre NestJS », la présentation de ce framework web est disponible dans le document <a href="https://stahe.github.io/typescript-nestjs-sept-2026/">Introduction au langage TypeScript et au framework web NestJS par l’exemple</a>. Dans ce document, le serveur NestJS est une boîte noire. On vous dit comment l’utiliser mais son code n’est pas décrit.</p>
-<p>Note 2 : Le langage de programmation de ce document est <em><mark style="background-color: #fff5ce">[Kotlin]</mark></em>. Ses bases (classes, data classes, nullabilité, lambdas, fonctions d’extension, collections...) sont supposées connues : elles sont présentées dans le <a href="https://stahe.github.io/kotlin-oct-2026/">cours Kotlin</a>. Les notions propres à Android ou à Jetpack Compose, ainsi que les coroutines, sont, elles, expliquées au fil du document.</p>
-<p>Note 3 : Claude fait souvent référence au client <em><mark style="background-color: #fff5ce">[Flutter]</mark></em> du cours <a href="https://stahe.github.io/flutter-nestjs-sept-2026/">Un exemple de client / serveur - Flutter / NestJS (2026)</a>, dont ce document est le portage, et parfois aux clients web <a href="https://stahe.github.io/angular-nestjs-sept-2026/">Angular</a>, <a href="https://stahe.github.io/react-nestjs-sept-2026/">React</a> et <a href="https://stahe.github.io/vuejs-nestjs-sept-2026/">Vue.js</a> de la même application. Ces comparaisons aident le lecteur qui connaît l’un de ces frameworks, mais aucun d’eux n’est nécessaire pour suivre ce document.</p>
+<p>Note 2 : Le langage de programmation de ce document est <em>[Kotlin]</em>. Ses bases (classes, data classes, nullabilité, lambdas, fonctions d’extension, collections...) sont supposées connues : elles sont présentées dans le <a href="https://stahe.github.io/kotlin-oct-2026/">cours Kotlin</a>. Les notions propres à Android ou à Jetpack Compose, ainsi que les coroutines, sont, elles, expliquées au fil du document.</p>
+<p>Note 3 : Claude fait souvent référence au client <em>[Flutter]</em> du cours <a href="https://stahe.github.io/flutter-nestjs-sept-2026/">Un exemple de client / serveur - Flutter / NestJS (2026)</a>, dont ce document est le portage, et parfois aux clients web <a href="https://stahe.github.io/angular-nestjs-sept-2026/">Angular</a>, <a href="https://stahe.github.io/react-nestjs-sept-2026/">React</a> et <a href="https://stahe.github.io/vuejs-nestjs-sept-2026/">Vue.js</a> de la même application. Ces comparaisons aident le lecteur qui connaît l’un de ces frameworks, mais aucun d’eux n’est nécessaire pour suivre ce document.</p>
 <p>Note 4 : si les explications de Claude ne vous semblent pas suffisantes, faites une requête à Claude pour lui demander des explications sur tel ou tel point de son cours. C’est souvent efficace.</p>
 <p>Serge Tahé, octobre 2026</p>
 <p>==</p>
-<p>Ce document fait suite au cours <a href="https://stahe.github.io/spring-angular1.x-juillet-2014/">“Un exemple de client / serveur - AngularJS 1.x / Spring 4”</a>, écrit en 2014. Ce document original construisait une petite application de prise de rendez-vous médicaux (« <em><mark style="background-color: #fff5ce">[RdvMedecins]</mark></em> ») avec un serveur Spring 4 / Spring Data / Spring MVC et un client AngularJS 1.x.</p>
+<p>Ce document fait suite au cours <a href="https://stahe.github.io/spring-angular1.x-juillet-2014/">“Un exemple de client / serveur - AngularJS 1.x / Spring 4”</a>, écrit en 2014. Ce document original construisait une petite application de prise de rendez-vous médicaux (« <em>[RdvMedecins]</em> ») avec un serveur Spring 4 / Spring Data / Spring MVC et un client AngularJS 1.x.</p>
 <p>Douze ans plus tard, les deux frameworks utilisés ont profondément évolué, ou ont même été remplacés dans les usages courants :</p>
 <ul>
-<li>côté serveur, <em><mark style="background-color: #fff5ce">[NestJS]</mark></em> s’est imposé comme l’un des frameworks Node.js/TypeScript les plus utilisés pour construire des API web structurées, avec une philosophie proche de celle de Spring (modules, contrôleurs, services, injection de dépendances) ;</li>
-<li>côté client, les applications sont de plus en plus souvent consultées sur un téléphone. Ce document construit donc une application Android NATIVE : écrite en <em><mark style="background-color: #fff5ce">[Kotlin]</mark></em>, le langage recommandé par Google pour Android depuis 2019, et dotée d’une interface décrite avec <em><mark style="background-color: #fff5ce">[Jetpack Compose]</mark></em>, la bibliothèque d’interface déclarative d’Android (version stable depuis 2021), qui remplace l’ancien système de vues décrites en XML.</li>
+<li>côté serveur, <em>[NestJS]</em> s’est imposé comme l’un des frameworks Node.js/TypeScript les plus utilisés pour construire des API web structurées, avec une philosophie proche de celle de Spring (modules, contrôleurs, services, injection de dépendances) ;</li>
+<li>côté client, les applications sont de plus en plus souvent consultées sur un téléphone. Ce document construit donc une application Android NATIVE : écrite en <em>[Kotlin]</em>, le langage recommandé par Google pour Android depuis 2019, et dotée d’une interface décrite avec <em>[Jetpack Compose]</em>, la bibliothèque d’interface déclarative d’Android (version stable depuis 2021), qui remplace l’ancien système de vues décrites en XML.</li>
 </ul>
 <p>L’objectif de ce document est de reprendre l’étude de cas originale - la même application, les mêmes fonctionnalités, la même base de données - et de la reconstruire avec les outils actuels, en conservant autant que possible la même progression pédagogique que le document de 2014 et que sa variante Flutter de 2026.</p>
 <h2 id="11-une-reconstruction-par-etapes">1.1. <span style="color: #2e74b5">Une reconstruction par étapes</span></h2>
@@ -661,13 +661,13 @@
 <ul>
 <li>l’architecture générale de l’application (inchangée dans son principe) ;</li>
 <li>la base de données (inchangée, à l’ajout près de la table [users]) ;</li>
-<li>l’installation du serveur <em><mark style="background-color: #fff5ce">[NestJS]</mark></em> complet, dont on teste avec Postman les fonctionnalités de consultation et de réservation/annulation de rendez-vous - son code n’est pas étudié ici ;</li>
+<li>l’installation du serveur <em>[NestJS]</em> complet, dont on teste avec Postman les fonctionnalités de consultation et de réservation/annulation de rendez-vous - son code n’est pas étudié ici ;</li>
 <li>l’authentification par jetons JWT et le contrôle d’accès par rôles (ADMIN/USER) de ce serveur - on apprend seulement à s’en servir, depuis Postman puis depuis le client ;</li>
-<li>le client Android correspondant, avec les mêmes fonctionnalités, un écran de connexion, une interface adaptée au rôle de l’utilisateur connecté (Material Design 3) et le passage français/anglais de l’interface (<em><mark style="background-color: #fff5ce">[TranslationsService]</mark></em>).</li>
+<li>le client Android correspondant, avec les mêmes fonctionnalités, un écran de connexion, une interface adaptée au rôle de l’utilisateur connecté (Material Design 3) et le passage français/anglais de l’interface (<em>[TranslationsService]</em>).</li>
 </ul>
 <p>Deux fonctionnalités du document original restent hors de ce document, comme dans la variante Flutter : le mode « debug » du client original, délibérément laissé de côté (cf. chapitre 6), et le réglage d’un délai réseau artificiel, reporté à une étape ultérieure.</p>
 <h2 id="12-a-qui-sadresse-ce-document">1.2. <span style="color: #2e74b5">À qui s’adresse ce document</span></h2>
-<p>Ce document ne suppose aucune connaissance préalable ni d’Android, ni de Jetpack Compose, ni de <em><mark style="background-color: #fff5ce">[NestJS]</mark></em>. Chaque notion nouvelle (activité, fonction @Composable, état, ViewModel, coroutine, intercepteur HTTP...) est expliquée au moment où elle apparaît. Quelques bases sont malgré tout utiles :</p>
+<p>Ce document ne suppose aucune connaissance préalable ni d’Android, ni de Jetpack Compose, ni de <em>[NestJS]</em>. Chaque notion nouvelle (activité, fonction @Composable, état, ViewModel, coroutine, intercepteur HTTP...) est expliquée au moment où elle apparaît. Quelques bases sont malgré tout utiles :</p>
 <ul>
 <li>une connaissance de base du langage Kotlin (cf. le <a href="https://stahe.github.io/kotlin-oct-2026/">cours Kotlin</a>) ;</li>
 <li>une connaissance de base des échanges HTTP (méthodes GET/POST, format JSON) ;</li>
@@ -678,14 +678,14 @@
 <p>L’architecture générale de l’application n’a pas changé depuis le document original :</p>
 <ul>
 <li>le client présente à l’utilisateur une interface unique, construite sur le modèle Composant (affichage + logique associée), qui s’appuie sur des services pour dialoguer avec le serveur - ici, une application Android exécutée par le système du téléphone ;</li>
-<li>l’utilisateur interagit avec les écrans de l’application. Ses actions nécessitent parfois l’interrogation du serveur <em><mark style="background-color: #fff5ce">[NestJS]</mark></em>, qui traite la demande et rend une réponse JSON ; celle-ci est utilisée pour mettre à jour l’écran présenté à l’utilisateur.</li>
+<li>l’utilisateur interagit avec les écrans de l’application. Ses actions nécessitent parfois l’interrogation du serveur <em>[NestJS]</em>, qui traite la demande et rend une réponse JSON ; celle-ci est utilisée pour mettre à jour l’écran présenté à l’utilisateur.</li>
 </ul>
 <p>L’application étudiée aura l’architecture suivante :</p>
 <p><img src="images/10000000000003790000030907E1F5D7.png" width="529" height="462" style="width:14cm;height:12.236cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003790000030907E1F5D7.png" /></p>
 <ul>
 <li>en [1], l’utilisateur de l’application Android interroge la couche [présentation] [2] de celle-ci ;</li>
 <li>pour exécuter l’action demandée par l’utilisateur, la couche [présentation] [2] peut interroger la couche [Services] [3] ;</li>
-<li>pour rendre le service demandé, la couche [3] peut avoir besoin d’interroger [4] le serveur JSON distant implémenté par <em><mark style="background-color: #fff5ce">[NestJS]</mark></em> ;</li>
+<li>pour rendre le service demandé, la couche [3] peut avoir besoin d’interroger [4] le serveur JSON distant implémenté par <em>[NestJS]</em> ;</li>
 <li>selon la requête reçue en [5], les couches [6-8] peuvent être interrogées ;</li>
 <li>la réponse du serveur remonte les couches [2-8] à l’envers ;</li>
 <li>l’écran affiché à l’utilisateur [1] reflète cette réponse.</li>
@@ -694,15 +694,15 @@
 <h2 id="14-les-outils-utilises">1.4. <span style="color: #2e74b5">Les outils utilisés</span></h2>
 <p>Ce document utilise les outils suivants (leur installation est détaillée aux chapitres 1 et 2) :</p>
 <ul>
-<li>Node.js (version 22 ou plus récente) et npm, pour exécuter le serveur <em><mark style="background-color: #fff5ce">[NestJS]</mark></em> ;</li>
-<li><em><mark style="background-color: #fff5ce">[Android Studio]</mark></em>, l’environnement de développement de Google pour Android. Il apporte tout ce qu’il faut au client : l’éditeur de code (construit sur IntelliJ IDEA), le SDK Android, un JDK (le JetBrains Runtime), l’émulateur Android et l’outil de construction <em><mark style="background-color: #fff5ce">[Gradle]</mark></em>. Contrairement au cours Flutter, où Android Studio ne servait qu’à installer le SDK Android, il est ici l’éditeur du client ;</li>
+<li>Node.js (version 22 ou plus récente) et npm, pour exécuter le serveur <em>[NestJS]</em> ;</li>
+<li><em>[Android Studio]</em>, l’environnement de développement de Google pour Android. Il apporte tout ce qu’il faut au client : l’éditeur de code (construit sur IntelliJ IDEA), le SDK Android, un JDK (le JetBrains Runtime), l’émulateur Android et l’outil de construction <em>[Gradle]</em>. Contrairement au cours Flutter, où Android Studio ne servait qu’à installer le SDK Android, il est ici l’éditeur du client ;</li>
 <li>Visual Studio Code (ou tout autre éditeur) pour le serveur NestJS, si l’on souhaite consulter son code ;</li>
-<li><em><mark style="background-color: #fff5ce">[MySQL]</mark></em> 8 pour la base de données, installé avec Laragon ;</li>
+<li><em>[MySQL]</em> 8 pour la base de données, installé avec Laragon ;</li>
 <li>Postman (ou tout autre client HTTP), pour tester les URL du serveur ;</li>
 <li>un téléphone Android, facultatif : un émulateur suffit pour suivre tout le document.</li>
 </ul>
 <h2 id="15-les-fonctionnalites-de-lapplication">1.5. <span style="color: #2e74b5">Les fonctionnalités de l’application</span></h2>
-<p>Les fonctionnalités « métier » de l’application <em><mark style="background-color: #fff5ce">[RdvMedecins]</mark></em> sont celles des variantes précédentes :</p>
+<p>Les fonctionnalités « métier » de l’application <em>[RdvMedecins]</em> sont celles des variantes précédentes :</p>
 <ul>
 <li>un cabinet médical emploie plusieurs médecins, chacun avec ses propres créneaux horaires de consultation ;</li>
 <li>un utilisateur doit se connecter (login/mot de passe) pour accéder à l’application ;</li>
@@ -740,9 +740,9 @@
 <h2 id="17-organisation-de-ce-document">1.7. <span style="color: #2e74b5">Organisation de ce document</span></h2>
 <ul>
 <li>Chapitre 1 - Mise en place de l’environnement de travail : installer Android Studio et le SDK Android, ouvrir le projet du client, créer un émulateur, préparer un téléphone.</li>
-<li>Chapitre 2 - Installation du serveur <em><mark style="background-color: #fff5ce">[NestJS]</mark></em> : installer Laragon et la base de données MySQL, configurer, lancer et tester le serveur, puis lancer une première fois le client.</li>
+<li>Chapitre 2 - Installation du serveur <em>[NestJS]</em> : installer Laragon et la base de données MySQL, configurer, lancer et tester le serveur, puis lancer une première fois le client.</li>
 <li>Chapitre 3 - Introduction à Android et à Jetpack Compose : activité, fonctions @Composable, état et recomposition, CompositionLocal, coroutines, cycle de vie et ViewModel - avec, à chaque fois, l’équivalent Flutter.</li>
-<li>Chapitre 4 - Le client Kotlin de l’application <em><mark style="background-color: #fff5ce">[RdvMedecins]</mark></em> : l’architecture du client, chacun de ses fichiers, et une utilisation pas à pas de l’application complète.</li>
+<li>Chapitre 4 - Le client Kotlin de l’application <em>[RdvMedecins]</em> : l’architecture du client, chacun de ses fichiers, et une utilisation pas à pas de l’application complète.</li>
 <li>Chapitre 5 - Exécuter l’application : émulateur, téléphone, APK - et ce qu’il faut savoir du réseau, du trafic HTTP en clair, de la rotation de l’écran et des écrans étroits ; enfin, ce qu’il faudrait pour viser aussi iOS, le bureau et le web.</li>
 <li>Chapitre 6 - Conclusion et étapes suivantes.</li>
 </ul>
